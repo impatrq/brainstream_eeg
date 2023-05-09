@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/pagina.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Braianstream Project</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo" href="#">
+                </a><img src="{% static 'img/logo.png' %}" ></a>
+            </div>
+            <ul class="botones">
+                <li><a href="iniciarsesion">Iniciar Sesion</a></li>
+                <li><a href="resultn">Su resultado</a></li>
+                <li><a href="bcin">BCI</a></li>
+                <li><a href="acercade">Acerca de</a></li>
+                <li><a href="contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officia culpa odit soluta labore alias, ducimus dicta magnam quibusdam harum voluptates vitae. Eos, a libero dolor ad tempore beatae eum.</h1>
+    <script src="{% static 'js/pagina.js' %}"></script>
+    <div class="scroll"></div>
+</body>
+</html>
