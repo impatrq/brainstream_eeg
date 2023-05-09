@@ -1,4 +1,4 @@
-![](imagenes\Logo-tipografia.PNG)
+![](imagenes/Logo-tipografia.PNG)
 
 # BrainStream-EEG
 Brainstream es un proyecto en el que visualizamos las respeustas del cerebro ante diferentes estimulos en busca del diagnostico de patologias de manera automatica asi como poder detectar estados cognitivos.
