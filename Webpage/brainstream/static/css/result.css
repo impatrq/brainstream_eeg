@@ -1,0 +1,497 @@
+.botoness li a{
+    color: black;
+}
+
+#chartContainer1 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 0px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer2 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 80px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer3 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 160px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer4 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 240px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer5 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 320px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer6 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 400px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer7 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 480px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer8 {
+    position: absolute;
+    left: 0px;
+    /* Ajusta la posición horizontal */
+    top: 560px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer9 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 0px;
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer10 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 80px;
+    width: 650px;
+    height: 80px;
+    /* top: 160px; */
+  }
+  
+  #chartContainer11 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 160px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer12 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 240px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer13 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 320px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer14 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 400px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer15 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 480px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+  #chartContainer16 {
+    position: absolute;
+    left: 660px;
+    /* Ajusta la posición horizontal */
+    top: 560px;
+    /* Ajusta la posición vertical */
+    width: 650px;
+    height: 80px;
+  }
+  
+
+  .colorChart1 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart1 {
+    position: relative;
+    width: 40px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  .colorChart2 {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart2 {
+    position: relative;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  .colorChart3 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart3 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart4 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart4 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart5 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart5 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart6 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart6 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart7 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart7 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart8 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart8 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart9 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart9 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart10 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart10 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  .colorChart11 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart11 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart12 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart12 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart13 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart13 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart14 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart14 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart15 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart15 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+  
+  
+  .colorChart16 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 650px;
+    background-color: rgb(75, 192, 192);
+    border: 0;
+  }
+  
+  .labelChart16 {
+    position: absolute;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 50px;
+    border: 0;
+    white-space: nowrap;
+  }
+
+  .freq {
+    position: relative;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 100px;
+    border: 0;
+    white-space: nowrap;
+  }
+  .counter {
+    position: relative;
+    width: 40px;
+    height: 0px;
+    top: 650px;
+    left: 100px;
+    border: 0;
+    white-space: nowrap;
+  }

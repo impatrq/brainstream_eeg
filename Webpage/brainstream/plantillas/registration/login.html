@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+</head>
+<body style="background-image: url(/static/img/concepto.jpg);">
+    <div class="Intro">
+        <img src="{%static 'img/Brainstream.gif' %}" alt="" id="logolol">
+    </div>
+    <div class="content"> 
+        <div class="login">
+            <h3>Inicia sesion</h3>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username" placeholder="Usuario" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" autocomplete="current-password" required id="id_password" placeholder="Contraseña" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="sum-btn">Ingresar</button>
+            </div>
+        </form>
+        <script src="{%static 'js/login.js'%}"></script>
+    </div>
+    <div class="register">
+        <a href="{% url 'register' %}">Register</a>
+    </div>
+</body>
+</html>
+{% endblock %}
