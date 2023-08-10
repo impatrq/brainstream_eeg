@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    outline: 0 ;
+}
+
+body{
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header{
+    width: 100%;
+    height: 54px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition:0.3s;
+    padding: 5px 10px;
+    z-index: 1;
+}
+
+header .logol a img{
+    margin-top: 4px;
+    position: relative;
+    transition: 0.3s ease;
+    height: 54px;
+}
+
+header.sticky{
+    background-color: white;
+    height: 54px;
+}
+
+.botoness{
+    padding-right: 20px;
+    display:flex
+}
+
+.botoness li{
+    list-style: none;
+    margin: 18px;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.botoness li a{
+    color: #D5D8DC;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.botoness li b{
+    color: rgb(154, 186, 214);
+}
+
+.botoness li a:hover{
+    color: rgb(154, 186, 214);
+}
+
+.texto{
+    color: rgb(154, 186, 214);
+}
+
+header.sticky li a{
+    color: black;
+}
+
+header.stickycimg{
+    transition: 0.6 ease;
+}
