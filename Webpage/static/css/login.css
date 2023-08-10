@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.intro{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    background: black;
+}
+
+.intro img{
+    marker-start: initial;
+    position: absolute;
+    margin-top: 20vh;
+    width: 350px;
+    height: 350px;
+}
+
+.content{
+    position: fixed;
+    left: 25%;
+    top: 30%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+
+.content form{
+    width: 100%;
+    height: 50px;
+}
+
+.login h3{
+    color: white;
+    margin: 15px;
+}
+
+
+.form-group{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.form-group button{
+    width: 100%;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    height: 40px;
+    background-color: rgba(58, 58, 109, 0.322);
+    border-color: transparent;
+    color: rgb(189, 189, 189);
+}
+
+
+.form-control{
+    width: 100%;
+    height: 40px;
+    cursor: text;
+    background-color: rgba(255, 255, 255, 0.11);
+    border-color: transparent;
+    border-radius: 15px;
+    padding-left: 20px;
+    color: white;
+}
+
+.register a{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.register :hover{
+    color: rgb(154, 186, 214);
+}
