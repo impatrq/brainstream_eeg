@@ -1,5 +1,31 @@
 // var imagen = document.getElementById('logochange');
 // logochange.src =  "/static/img/logo-negro.png";
+function cambiarIcono() {
+    var iconoElemento = document.getElementById("icono1");
+
+    if (iconoElemento.classList.contains("fa-record-vinyl")) {
+        iconoElemento.classList.remove("fa-record-vinyl");
+        iconoElemento.classList.add("fa-stop");
+    } else {
+        iconoElemento.classList.remove("fa-stop");
+        iconoElemento.classList.add("fa-record-vinyl");
+    }
+}
+function cambiarIcono1() {
+    var iconoElemento = document.getElementById("icono");
+    if (iconoElemento.classList.contains("fa-pause")) {
+        iconoElemento.classList.remove("fa-pause");
+        iconoElemento.classList.add("fa-play");
+    } else {
+        iconoElemento.classList.remove("fa-play");
+        iconoElemento.classList.add("fa-pause");
+    }
+}
+
+window.addEventListener("scroll", function(){
+    var lb = document.querySelector("lat_butons");
+    lb.classList.toggle("sticky",window.scrollY > 0);
+})
 
 var range = "";
 var cadena = "";
@@ -1159,7 +1185,22 @@ socket = new WebSocket("ws://localhost:8000/menu/resultn");
 
 var dataValue = []
 // var gradient = ctx.createLinearGradient(graphData.options.width / 2, graphData.options.height, graphData.options.width / 2, 0);
-myChart1.data.datasets[0].borderColor = "green"
+myChart1.data.datasets[0].borderColor = "blue"
+myChart2.data.datasets[0].borderColor = "lightblue"
+myChart3.data.datasets[0].borderColor = "green"
+myChart4.data.datasets[0].borderColor = "lawngreen"
+myChart5.data.datasets[0].borderColor = "yellow"
+myChart6.data.datasets[0].borderColor = "orange"
+myChart7.data.datasets[0].borderColor = "red"
+myChart8.data.datasets[0].borderColor = "pink"
+myChart9.data.datasets[0].borderColor = "purple"
+myChart10.data.datasets[0].borderColor = "salmon"
+myChart11.data.datasets[0].borderColor = "brown"
+myChart12.data.datasets[0].borderColor = "teal"
+myChart13.data.datasets[0].borderColor = "hotpink"
+myChart14.data.datasets[0].borderColor = "aquamarine"
+myChart15.data.datasets[0].borderColor = "grey"
+myChart16.data.datasets[0].borderColor = "black"
 // gradient.addColorStop(0, 'rgba(75, 192, 192, 1)'); // Color en la línea
 // gradient.addColorStop(1, 'rgba(75, 192, 192, 0)'); // Color transparente en el punto 0 del eje y
 

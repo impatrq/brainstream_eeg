@@ -9,4 +9,6 @@ urlpatterns = [
     path('contacto', views.contactoin, name='contacto'),
     path('acercade', views.acercain, name='acercade'),
     path('cognitive', views.cognitive, name='cognitive'),
+    path('historial', views.historial, name='historial'),
+
 ]

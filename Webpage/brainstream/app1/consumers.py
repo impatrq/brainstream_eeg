@@ -41,8 +41,7 @@ class GraphConsumer(WebsocketConsumer):
             ndata = float(ndata[0])
             counter += 1
             fin = time()
-            vsend.append(ndata)
-
+            vsend.append(ndata) 
         # data = serial_port.readline().decode('utf-8', errors="ignore").strip()
         # ndata = [s for s in data if s != '\x00']
         # ndata = ''.join(ndata)

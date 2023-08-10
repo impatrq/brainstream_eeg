@@ -44,3 +44,9 @@ def cognitive(request):
         return render(request, "content/cognitive.html")
     else:
         return redirect(reverse("welcome"))
+
+def historial(request):
+    if request.user.is_authenticated:
+        return render(request, "content/historial.html")
+    else:
+        return redirect(reverse("welcome"))
