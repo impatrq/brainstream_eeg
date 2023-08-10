@@ -1,0 +1,19 @@
+{% extends 'web_base.html' %}
+{% load static %}
+{% block adicional %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bci.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="descarga">
+        <h1>Link de descarga</h1>
+        <button><a href="{%static 'ia_models/Flappy_bird.rar'%}" download="Flappy_bird.rar">Descarga del papu</a></button>
+    </div>
+</body>
+</html>
+{% endblock %}

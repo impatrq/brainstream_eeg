@@ -1,0 +1,61 @@
+{% extends 'web_base.html' %}
+{% load static %}
+{% block adicional %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/3f386f0be1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'css/result.css'%}">
+</head>
+
+<body>
+    <div id="chartContainer1"><canvas id="myChart1"></canvas></div>
+    <div id="chartContainer2"><canvas id="myChart2"></canvas></div>
+    <div id="chartContainer3"><canvas id="myChart3"></canvas></div>
+    <div id="chartContainer4"><canvas id="myChart4"></canvas></div>
+    <div id="chartContainer5"><canvas id="myChart5"></canvas></div>
+    <div id="chartContainer6"><canvas id="myChart6"></canvas></div>
+    <div id="chartContainer7"><canvas id="myChart7"></canvas></div>
+    <div id="chartContainer8"><canvas id="myChart8"></canvas></div>
+    <div id="chartContainer9"><canvas id="myChart9"></canvas></div>
+    <div id="chartContainer10"><canvas id="myChart10"></canvas></div>
+    <div id="chartContainer11"><canvas id="myChart11"></canvas></div>
+    <div id="chartContainer12"><canvas id="myChart12"></canvas></div>
+    <div id="chartContainer13"><canvas id="myChart13"></canvas></div>
+    <div id="chartContainer14"><canvas id="myChart14"></canvas></div>
+    <div id="chartContainer15"><canvas id="myChart15"></canvas></div>
+    <div id="chartContainer16"><canvas id="myChart16"></canvas></div>
+    <div class="freq">Frecuencia<p id="mensaje"></p></div>
+    <div class="counter">Contador<p id="mensaje2"></p></div>
+    <div class="lat_butons">
+        <div class="pbtn"><a href="javascript:void(0)"><i class="fa-solid fa-pause" id="icono" onclick="cambiarIcono1()"></i></a></div>
+        <div class="sbtn"><a href="javascript:void(0)"><i class="fa-solid fa-record-vinyl" id="icono1" onclick="cambiarIcono()"></i></a></div>
+        <div class="tbtn"><a href="historial"><i class="fa-solid fa-download"></i></a></div>
+    </div>
+    <div class="tag-1">
+        <div class="colorChart1">FP1</div>
+        <div class="colorChart2">FP2</div>
+        <div class="colorChart3">F7</div>
+        <div class="colorChart4">F3</div>
+        <div class="colorChart5">F4</div>
+        <div class="colorChart6">F8</div>
+        <div class="colorChart7">T3</div>
+        <div class="colorChart8">C3</div>
+        <div class="colorChart9">C4</div>
+        <div class="colorChart10">T4</div>
+        <div class="colorChart11">T5</div>
+        <div class="colorChart12">P3</div>
+        <div class="colorChart13">P4</div>
+        <div class="colorChart14">T6</div>
+        <div class="colorChart15">O1</div>
+        <div class="colorChart16">O2</div>
+    </div>
+    <script src="{% static 'js/result.js' %}"></script>   
+</body>
+</html>
+{% endblock %}
