@@ -8,7 +8,8 @@ import serial
 from django.shortcuts import render, redirect
 from django.urls import reverse
 import asyncio
-serial_port = serial.Serial('COM7', baudrate=115200)
+from app1.models import Datos  # Ajusta la ruta a tu modelo
+serial_port = serial.Serial('COM3', baudrate=115200)
 serial_port.timeout = None
 
 
@@ -27,6 +28,8 @@ class GraphConsumer(WebsocketConsumer):
     def receive(self, text_data):
         # User has changed the URL
         # validation = False
+        text_data_json = json.loads(text_data)
+        print(text_data_json)
         inicio = time()
         fin = time()
         counter = 0
@@ -38,20 +41,20 @@ class GraphConsumer(WebsocketConsumer):
             ndata = ''.join(ndata)
             ndata = ndata.split('\t')
             sfreq = ndata[1]
-            ndata = float(ndata[0])
+            try:
+                ndata = float(ndata[0])
+            except ValueError:
+                ndata = 0
             counter += 1
             fin = time()
-            vsend.append(ndata) 
-        # data = serial_port.readline().decode('utf-8', errors="ignore").strip()
-        # ndata = [s for s in data if s != '\x00']
-        # ndata = ''.join(ndata)
-        # ndata = ndata.split('\t')
-        # # print(type(ndata))
-        # sfreq = ndata[1]
-        # ndata = float(ndata[0])
-        # fin = time()
-        # print(fin-inicio)
-        # vsend = vsend[:len(vsend)//100:]
-        # print(len(vsend))
+            vsend.append(ndata)
+        if text_data_json:
+            instancia, creado = Datos.objects.get_or_create(id=1, defaults={'valores': [0]})
+            # instancia.valores.append("ZURDOS DE MIERDAAA")
+            # instancia.save()
+            ultimo_valor = instancia.valores[-1]
+            nuevo_valor_int = int(ultimo_valor) + 1
+            instancia.valores.append(int(nuevo_valor_int))
+            instancia.save()
         self.send(json.dumps(
             {"value": vsend, "sfreq": sfreq, "counter": counter}))

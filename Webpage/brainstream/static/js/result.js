@@ -1,18 +1,19 @@
 // var imagen = document.getElementById('logochange');
 // logochange.src =  "/static/img/logo-negro.png";
 function cambiarIcono() {
-    var iconoElemento = document.getElementById("icono1");
+    // iconoElemento = document.getElementById("icono1");
 
-    if (iconoElemento.classList.contains("fa-record-vinyl")) {
-        iconoElemento.classList.remove("fa-record-vinyl");
-        iconoElemento.classList.add("fa-stop");
+    if (iconoElemento1.classList.contains("fa-record-vinyl")) {
+        iconoElemento1.classList.remove("fa-record-vinyl");
+        iconoElemento1.classList.add("fa-stop");
     } else {
-        iconoElemento.classList.remove("fa-stop");
-        iconoElemento.classList.add("fa-record-vinyl");
+        iconoElemento1.classList.remove("fa-stop");
+        iconoElemento1.classList.add("fa-record-vinyl");
     }
 }
 function cambiarIcono1() {
-    var iconoElemento = document.getElementById("icono");
+
+    // iconoElemento = document.getElementById("icono");
     if (iconoElemento.classList.contains("fa-pause")) {
         iconoElemento.classList.remove("fa-pause");
         iconoElemento.classList.add("fa-play");
@@ -21,6 +22,7 @@ function cambiarIcono1() {
         iconoElemento.classList.add("fa-pause");
     }
 }
+
 
 window.addEventListener("scroll", function(){
     var lb = document.querySelector("lat_butons");
@@ -32,13 +34,16 @@ var cadena = "";
 for (var i = 0; i < 400; i++) {
     range += i.toString() + ", ";
     cadena += i.toString() + ", ";
-}
+}{}
 var arrayEnteros = cadena.split(",").map(function (num) {
     return parseInt(num.trim(), 10);
 });
 var arrayStrings = range.split(",").map(function (str) {
     return str.trim();
 });
+
+var iconoElemento = document.getElementById("icono");
+var iconoElemento1 = document.getElementById("icono1");
 var ctx1 = document.getElementById('myChart1').getContext('2d');
 var ctx2 = document.getElementById('myChart2').getContext('2d');
 var ctx3 = document.getElementById('myChart3').getContext('2d');
@@ -1184,6 +1189,7 @@ socket = new WebSocket("ws://localhost:8000/menu/resultn");
 
 
 var dataValue = []
+var presion = 0
 // var gradient = ctx.createLinearGradient(graphData.options.width / 2, graphData.options.height, graphData.options.width / 2, 0);
 myChart1.data.datasets[0].borderColor = "blue"
 myChart2.data.datasets[0].borderColor = "lightblue"
@@ -1218,6 +1224,7 @@ socket.onmessage = function (e) {
         dataValue.splice(0, dataValue.length - 300);
     }
     // dataValue = djangoData.value
+    
     myChart1.data.datasets[0].data = dataValue;
     myChart2.data.datasets[0].data = dataValue;
     myChart3.data.datasets[0].data = dataValue;
@@ -1236,23 +1243,31 @@ socket.onmessage = function (e) {
     myChart16.data.datasets[0].data = dataValue;
     mensajeElement.innerText = frequency;
     mensajeElement2.innerText = counter;
-    myChart1.update();
-    myChart2.update();
-    myChart3.update();
-    myChart4.update();
-    myChart5.update();
-    myChart6.update();
-    myChart7.update();
-    myChart8.update();
-    myChart9.update();
-    myChart10.update();
-    myChart11.update();
-    myChart12.update();
-    myChart13.update();
-    myChart14.update();
-    myChart15.update();
-    myChart16.update();
-    socket.send('message');
+    if (!iconoElemento.classList.contains("fa-pause")) {
+        myChart1.update();
+        myChart2.update();
+        myChart3.update();
+        myChart4.update();
+        myChart5.update();
+        myChart6.update();
+        myChart7.update();
+        myChart8.update();
+        myChart9.update();
+        myChart10.update();
+        myChart11.update();
+        myChart12.update();
+        myChart13.update();
+        myChart14.update();
+        myChart15.update();
+        myChart16.update();
+    } 
+    if (iconoElemento1.classList.contains("fa-record-vinyl")) {
+        presion = 0;
+    } else {
+        presion = 1;
+    }
+    socket.send(presion);
+    // socket.send('message');
 };
 
 function generarValoresAleatorios() {
