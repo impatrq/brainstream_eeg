@@ -141,20 +141,20 @@ function createGraphData(label) {
 
 var myChart1 = new Chart(ctx1, graphData1);
 var myChart2 = new Chart(ctx2, graphData2);
-var myChart3 = new Chart(ctx3, graphData3);
+// var myChart3 = new Chart(ctx3, graphData3);
 var myChart4 = new Chart(ctx4, graphData4);
 var myChart5 = new Chart(ctx5, graphData5);
 var myChart6 = new Chart(ctx6, graphData6);
 var myChart7 = new Chart(ctx7, graphData7);
 var myChart8 = new Chart(ctx8, graphData8);
 var myChart9 = new Chart(ctx9, graphData9);
-var myChart10 = new Chart(ctx10, graphData10);
-var myChart11 = new Chart(ctx11, graphData11);
-var myChart12 = new Chart(ctx12, graphData12);
-var myChart13 = new Chart(ctx13, graphData13);
-var myChart14 = new Chart(ctx14, graphData14);
-var myChart15 = new Chart(ctx15, graphData15);
-var myChart16 = new Chart(ctx16, graphData16);
+// var myChart10 = new Chart(ctx10, graphData10);
+// var myChart11 = new Chart(ctx11, graphData11);
+// var myChart12 = new Chart(ctx12, graphData12);
+// var myChart13 = new Chart(ctx13, graphData13);
+// var myChart14 = new Chart(ctx14, graphData14);
+// var myChart15 = new Chart(ctx15, graphData15);
+// var myChart16 = new Chart(ctx16, graphData16);
 
 var socket = null;
 
