@@ -141,3 +141,21 @@ def historial(request):
         return render(request, "content/historial.html", {"nombre": username, "imagenes_urls": imagen_nombre2}) 
     else:
         return render(request, "content/historial.html", {"nombre": username, "imagenes_urls": imagen_nombre}) 
+
+def generar_informe(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            ruta_array = request.POST.get('array_url', '')
+            ruta_array = "static\\" + ruta_array
+            array = np.load(ruta_array)
+            valor = 2
+            for a in range(array.shape[0]):
+                array[a] += valor
+                valor += 2
+            # array = array + offsets
+            array = array.tolist()
+            # print(array)s
+            contexto = {"arr": array}
+        return render(request, "eeg/inform.html", context=contexto)
+    else:
+        return redirect(reverse("welcome"))
