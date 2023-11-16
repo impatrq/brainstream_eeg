@@ -10,5 +10,5 @@ urlpatterns = [
     path('acercade', views.acercain, name='acercade'),
     path('cognitive', views.cognitive, name='cognitive'),
     path('historial', views.historial, name='historial'),
-
+    path("informe", views.generar_informe, name="generar_informe")
 ]
