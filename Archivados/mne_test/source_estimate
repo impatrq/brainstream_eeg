@@ -1,0 +1,35 @@
+from mne import read_source_estimate
+from mne.datasets import sample
+import matplotlib.pyplot as plt
+from pyqtgraph.Qt import QtGui
+import mne
+
+
+
+print(__doc__)
+
+# Paths to example data
+sample_dir_raw = sample.data_path()
+sample_dir = sample_dir_raw / 'MEG' / 'sample'
+subjects_dir = sample_dir_raw / 'subjects'
+
+stc_path = sample_dir / 'sample_audvis-meg'
+
+stc = read_source_estimate(stc_path, subject='sample')
+
+# Define plotting parameters
+surfer_kwargs = dict(
+    hemi='lh', subjects_dir=subjects_dir,
+    clim=dict(kind='value', lims=[8, 12, 15]), views='lateral',
+    initial_time=0.09, time_unit='s', size=(512, 393),
+    smoothing_steps=5)
+
+report = mne.Report(title='Source estimate example')
+report.add_stc(
+    stc=stc_path, subject='sample', subjects_dir=subjects_dir,
+    title='Source estimate', n_time_points=25  # few for speed
+)
+report.add_image(
+    image='C:/Users/fedep/OneDrive/Documentos/mne_test/img/Analisis_voltage.png', title='Electroencefalograma'
+) # omit PSD plot
+report.save('report_raw.html', overwrite=True)
