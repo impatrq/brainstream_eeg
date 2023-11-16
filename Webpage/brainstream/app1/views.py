@@ -59,7 +59,85 @@ def cognitive(request):
         return redirect(reverse("welcome"))
 
 def historial(request):
-    if request.user.is_authenticated:
-        return render(request, "content/historial.html")
+    username = request.user.username
+    superus_img = []
+    superus_descarga = []
+    superus_arrays = []
+    nfile = []
+    n1 = []
+
+    ruta_carpeta_imagenes = os.path.join("static", "img", "historial", username, "preview")
+    ruta_todos = os.path.join("static", "img", "historial")
+    nombres_archivos = os.listdir(ruta_carpeta_imagenes)
+
+    for cadena in nombres_archivos:
+        nueva_cadena = cadena.split('.')[0]  # Elimina los últimos 4 caracteres
+        n1.append(nueva_cadena)
+
+    todos_archivos = os.listdir(ruta_todos)
+
+    for x in todos_archivos:
+        n2 = []
+        ruta_usuarios = os.path.join(ruta_todos, x, "preview")
+        nombres_archivos_todos = os.listdir(ruta_usuarios)
+        for cadena in nombres_archivos_todos:
+            nueva_cadena = cadena.split('.')[0]  # Elimina los últimos 4 caracteres
+            n2.append(nueva_cadena)
+
+        nfile = n2+nfile
+
+        ruta_final = [os.path.join("img", "historial", x, "preview",  nombre_archivo_todos) for nombre_archivo_todos in nombres_archivos_todos]
+        superus_img = ruta_final+superus_img
+        
+    # for x in todos_archivos:
+    #     ruta_usuarios = os.path.join(ruta_todos, x, "informes")
+    #     nombres_archivos_todos = os.listdir(ruta_usuarios)
+
+    #     ruta_final = [os.path.join("img", "historial", x, "informes",  nombre_archivo_todos) for nombre_archivo_todos in nombres_archivos_todos]
+    #     superus_informe = ruta_final+superus_informe
+
+    for x in todos_archivos:
+        ruta_usuarios = os.path.join(ruta_todos, x, "download")
+        nombres_archivos_todos = os.listdir(ruta_usuarios)
+
+        ruta_final = [os.path.join("img", "historial", x, "download",  nombre_archivo_todos) for nombre_archivo_todos in nombres_archivos_todos]
+        superus_descarga = ruta_final+superus_descarga
+        
+    imagenes_urls = [os.path.join("img", "historial", username, "preview", nombre_archivo) for nombre_archivo in nombres_archivos]
+
+    for x in todos_archivos:
+        ruta_usuarios = os.path.join(ruta_todos, x, "array")
+        nombres_archivos_todos = os.listdir(ruta_usuarios)
+
+        ruta_final = [os.path.join("img", "historial", x, "array",  nombre_archivo_todos) for nombre_archivo_todos in nombres_archivos_todos]
+        superus_arrays = ruta_final+superus_arrays
+        
+
+    #------------informes--------------
+    # ruta_carpeta_informes = os.path.join("static", "img", "historial", username, "informes")
+    # nombres_informes = os.listdir(ruta_carpeta_informes)
+    # informes_urls = [os.path.join("img", "historial", username, "informes", nombre_informe) for nombre_informe in nombres_informes]
+
+    #------------download--------------
+
+    ruta_carpeta_descargas = os.path.join("static", "img", "historial", username, "download")
+    nombres_descargas = os.listdir(ruta_carpeta_descargas)
+    descargas_urls = [os.path.join("img", "historial", username, "download", nombre_descarga) for nombre_descarga in nombres_descargas]
+
+    #------------array--------------
+
+    ruta_carpeta_arrays = os.path.join("static", "img", "historial", username, "array")
+    nombres_arrays = os.listdir(ruta_carpeta_arrays)
+    arrays_urls = [os.path.join("static", "img", "historial", username, "array", nombre_descarga) for nombre_descarga in nombres_arrays]
+
+
+
+    imagen_nombre = zip(n1, imagenes_urls, descargas_urls, arrays_urls)
+    imagen_nombre2 = zip(nfile, superus_img, superus_descarga, superus_arrays)
+    print(superus_descarga)
+
+
+    if request.user.is_superuser:
+        return render(request, "content/historial.html", {"nombre": username, "imagenes_urls": imagen_nombre2}) 
     else:
-        return redirect(reverse("welcome"))
+        return render(request, "content/historial.html", {"nombre": username, "imagenes_urls": imagen_nombre}) 
