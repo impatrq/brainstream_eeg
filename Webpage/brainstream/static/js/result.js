@@ -188,59 +188,94 @@ socket.onmessage = function (e) {
     var djangoData = JSON.parse(e.data);
     var frequency = djangoData.sfreq;
     var counter = djangoData.counter;
-    dataValue = dataValue.concat(djangoData.value);
-    // console.log(dataValue);
-    // dataValue.push(djangoData.value);
-    if (dataValue.length >= 300) {
-        // dataValue.shift();
-        // dataValue.shift(0, dataValue.length);
-        dataValue.splice(0, dataValue.length - 300);
-    }
-    // dataValue = djangoData.value
-    
-    myChart1.data.datasets[0].data = dataValue;
-    myChart2.data.datasets[0].data = dataValue;
-    myChart3.data.datasets[0].data = dataValue;
-    myChart4.data.datasets[0].data = dataValue;
-    myChart5.data.datasets[0].data = dataValue;
-    myChart6.data.datasets[0].data = dataValue;
-    myChart7.data.datasets[0].data = dataValue;
-    myChart8.data.datasets[0].data = dataValue;
-    myChart9.data.datasets[0].data = dataValue;
-    myChart10.data.datasets[0].data = dataValue;
-    myChart11.data.datasets[0].data = dataValue;
-    myChart12.data.datasets[0].data = dataValue;
-    myChart13.data.datasets[0].data = dataValue;
-    myChart14.data.datasets[0].data = dataValue;
-    myChart15.data.datasets[0].data = dataValue;
-    myChart16.data.datasets[0].data = dataValue;
+    dataValue1 = dataValue1.concat(djangoData.value1);
+    dataValue2 = dataValue2.concat(djangoData.value2);
+    // dataValue3 = dataValue3.concat(djangoData.value3);
+    dataValue4 = dataValue4.concat(djangoData.value4);
+    dataValue5 = dataValue5.concat(djangoData.value5);
+    dataValue6 = dataValue6.concat(djangoData.value6);
+    dataValue7 = dataValue7.concat(djangoData.value7);
+    dataValue8 = dataValue8.concat(djangoData.value8);
+    dataValue9 = dataValue9.concat(djangoData.value9);
+    // dataValue10 = dataValue10.concat(djangoData.value10);
+    // dataValue11 = dataValue11.concat(djangoData.value11);
+    // dataValue12 = dataValue12.concat(djangoData.value12);
+    // dataValue13 = dataValue13.concat(djangoData.value13);
+    // dataValue14 = dataValue14.concat(djangoData.value14);
+    // dataValue15 = dataValue15.concat(djangoData.value15);
+    // dataValue16 = dataValue16.concat(djangoData.value16);
+
+    dataValue1.length >= longitud && dataValue1.splice(0, dataValue1.length - longitud);
+    dataValue2.length >= longitud && dataValue2.splice(0, dataValue2.length - longitud);
+    // dataValue3.length >= longitud && dataValue3.splice(0, dataValue3.length - longitud);
+    dataValue4.length >= longitud && dataValue4.splice(0, dataValue4.length - longitud);
+    dataValue5.length >= longitud && dataValue5.splice(0, dataValue5.length - longitud);
+    dataValue6.length >= longitud && dataValue6.splice(0, dataValue6.length - longitud);
+    dataValue7.length >= longitud && dataValue7.splice(0, dataValue7.length - longitud);
+    dataValue8.length >= longitud && dataValue8.splice(0, dataValue8.length - longitud);
+    dataValue9.length >= longitud && dataValue9.splice(0, dataValue9.length - longitud);
+    // dataValue10.length >= longitud && dataValue10.splice(0, dataValue10.length - longitud);
+    // dataValue11.length >= longitud && dataValue11.splice(0, dataValue11.length - longitud);
+    // dataValue12.length >= longitud && dataValue12.splice(0, dataValue12.length - longitud);
+    // dataValue13.length >= longitud && dataValue13.splice(0, dataValue13.length - longitud);
+    // dataValue14.length >= longitud && dataValue14.splice(0, dataValue14.length - longitud);
+    // dataValue15.length >= longitud && dataValue15.splice(0, dataValue15.length - longitud);
+    // dataValue16.length >= longitud && dataValue16.splice(0, dataValue16.length - longitud);
+
+
+    // condición ? expresiónSiVerdadero : expresiónSiFalso;
+    // if (dataValue2.length >= longitud) {
+    //     // dataValue.shift();
+    //     // dataValue.shift(0, dataValue.length);
+    //     dataValue2.splice(0, dataValue2.length - longitud);
+    // }
+    // // dataValue = djangoData.value
+
+    myChart1.data.datasets[0].data = dataValue1;
+    myChart2.data.datasets[0].data = dataValue2;
+    // myChart3.data.datasets[0].data = dataValue3;
+    myChart4.data.datasets[0].data = dataValue4;
+    myChart5.data.datasets[0].data = dataValue5;
+    myChart6.data.datasets[0].data = dataValue6;
+    myChart7.data.datasets[0].data = dataValue7;
+    myChart8.data.datasets[0].data = dataValue8;
+    myChart9.data.datasets[0].data = dataValue9;
+    // myChart10.data.datasets[0].data = dataValue10;
+    // myChart11.data.datasets[0].data = dataValue11;
+    // myChart12.data.datasets[0].data = dataValue12;
+    // myChart13.data.datasets[0].data = dataValue13;
+    // myChart14.data.datasets[0].data = dataValue14;
+    // myChart15.data.datasets[0].data = dataValue15;
+    // myChart16.data.datasets[0].data = dataValue16;
     mensajeElement.innerText = frequency;
     mensajeElement2.innerText = counter;
-    if (!iconoElemento.classList.contains("fa-pause")) {
+
+    if (iconoElemento.classList.contains("fa-pause")) {
         myChart1.update();
         myChart2.update();
-        myChart3.update();
+        // myChart3.update();
         myChart4.update();
         myChart5.update();
         myChart6.update();
         myChart7.update();
         myChart8.update();
         myChart9.update();
-        myChart10.update();
-        myChart11.update();
-        myChart12.update();
-        myChart13.update();
-        myChart14.update();
-        myChart15.update();
-        myChart16.update();
-    } 
-    if (iconoElemento1.classList.contains("fa-record-vinyl")) {
-        presion = 0;
-    } else {
-        presion = 1;
+        // myChart10.update();
+        // myChart11.update();
+        // myChart12.update();
+        // myChart13.update();
+        // myChart14.update();
+        // myChart15.update();
+        // myChart16.update();
+
     }
-    socket.send(presion);
-    // socket.send('message');
+    if (iconoElemento1.classList.contains("fa-record-vinyl")) {
+        data_send.presion = 0;
+    } else {
+        data_send.presion = 1;
+    }
+
+    socket.send(JSON.stringify(data_send));
 };
 
 function generarValoresAleatorios() {
