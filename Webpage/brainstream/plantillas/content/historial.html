@@ -1,4 +1,42 @@
 {% extends 'web_base.html' %}
 {% load static %}
 {% block adicional %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/historial.css'%}">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Historial de Análisis de {{nombre}}</h1>
+    <ul>
+        {% for fotos, imagen_url, descarga_url, arrays_urls in imagenes_urls %}
+        <li>
+            <div class="bloque">
+                <h2>
+                    Fecha: {{ fotos.0 }}<br>
+                    Hora: {{ fotos.1 }}<br>
+                    Usuario: {{ fotos.2 }}
+                </h2>
+                <img src="{% static imagen_url %}" alt="Imagen">
+                <div class="botones">
+                    <form method="post" action="{% url 'generar_informe' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="array_url" value="{{ arrays_urls }}">
+                        <button type="submit">Informe</button>
+                    </form>
+                    <button><a href="{% static descarga_url %}" download>Descarga</a></button>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+<script src="{% static 'js/historial.js' %}"></script>
+
+</html>
 {% endblock %}
