@@ -9,39 +9,30 @@
   <link rel="stylesheet" href="{%static 'css/inicio.css'%}">
 </head>
 <body>
-   <div class="contenedor">
+  <div class="contenedor">
     <div class="slideshow">
-      <div class="slide slide1">
-        <img src="{%static 'img/concepto.jpg'%}" alt="">
-        <h1>Resultado de análisis</h1>
-        <h2>Hacete un analisis de epilepsia</h2>
-        <a href="cognitive"><button>Empezar</button></a>
-      </div>
-      <div class="slide slide2">
-        <img src="{%static 'img/aeronautico.jpg'%}" alt="">
-        <h1>Congnitive experience</h1>
-        <h2>Mostraremos videos para ver su respuesta en pantalla</h2>
-        <a href="resultn"><button>Empezar</button></a>
-      </div>
-      <div class="slide slide3">
-        <img src="{%static 'img/firmamento.jpg'%}" alt="">
-        <h1>¡Juega!</h1>
-        <h2>El clasico flappy bird controlado por ondas cerebrales</h2>
-        <a href="bcin"><button>Empezar</button></a>
+      <div class="slide slide5">
+        <img src="{%static 'img/las-ondas-cerebrales-alfa-beta-gamma-mostrando-mayor-actividad-mental-incluida-la-percepcion-y-conciencia-aghkjb (1).jpg'%}" alt="">
+        <h1>Recording</h1>
+        <h2>Comienza un recording</h2>
+        <a href="resultn"><button>Ingresar</button></a>
       </div>
       <div class="slide slide4">
-        <img src="{%static 'img/firmamento.jpg'%}" alt="">
+        <img src="{%static 'img/eeg-electrophysiological-monitoring-method-eeg-1304713.jpg'%}" alt="">
         <h1>Mis resultados</h1>
         <h2>Accede a tu historial</h2>
         <a href="historial"><button>Ingresar</button></a>
       </div>
     </div>
-   </div>
-   <div class="bloque-slider">
+  </div>
+  <div class="bloque-slider">
     <h2><b>Introducción</b></h2>
-    <h3>En este proyecto nos centramos en la construccion y utilizacion de un Electroencefalógrafo (EEG) para la deteccion de patologías, reconocimiento de estados cognitivos e Interfaz cerebro computadora</h3>
-    <img src="{%static 'img/200_pesos.jpg'%}" alt="">
-   </div>
+    <h3>Esta página es una interfaz de usuario que permite guardar recordings de los datos, 
+      visualizarlos en el apartado de historial y descargar un archivo para tenerlos en formatos edf. También incluye un
+      apartado experminental donde en un futuro se espera utilizar las señales para detectar epilepsia, y también se espera poder predecir
+      los estados emocionales a través de estímulos visuales.
+    </h3>
+  </div>
    <script src="{% static 'js/inicio.js' %}"></script>
    <script src="http://code.jquery.com/jquery-latest.js"></script>
    <script src="{%static 'slick/slick.min.js'%}"></script>
