@@ -31,6 +31,13 @@ class GraphConsumer(WebsocketConsumer):
 
     def connect(self):
         self.accept()
+        try: 
+            ultimo_registro = Datos.objects.latest('id')
+            ultimo_id = ultimo_registro.id
+            self.bases = ultimo_id+1
+        except Datos.DoesNotExist:
+            self.bases = 0
+        print(self.bases)
         self.send(json.dumps(
             {"value": 0, "sfreq": 0, "counter": 0}))
         # sleep(1)
