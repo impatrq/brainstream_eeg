@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding-top: 0;
+}
+
+body{
+    background-color: rgb(213, 213, 213);
+}
+
+h1 {
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 70px;
+    background-color: grey;
+    text-align: center;
+}
+
+.botoness li a{
+    color: black;
+}
+
+.bloque {
+    position: relative;
+    background-color: rgb(230, 230, 230);
+    border: 2px solid black;
+}
+
+.bloque h2 {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+}
+
+.bloque img {
+    margin-left: 30%;
+    width: 40%;
+    border: 1px solid black;
+}
+
+.botones {
+    margin-bottom: 20px;
+    margin-left: 30%;
+    width: 40%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Aplicar los mismos estilos a ambos botones */
+.botones button {
+    position: static;
+    margin-top: 15px;
+    width: 100%;
+    height: 50%;
+    margin-inline: 5vw ;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+.botones a {
+    width: 60%;
+    text-decoration: none;
+    color: black;
+}
