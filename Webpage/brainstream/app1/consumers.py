@@ -23,6 +23,12 @@ serial_port.timeout = None
 
 
 class GraphConsumer(WebsocketConsumer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.bases = 0
+        self.recording = False
+        # self.user = 0
+
     def connect(self):
         self.accept()
         self.send(json.dumps(
