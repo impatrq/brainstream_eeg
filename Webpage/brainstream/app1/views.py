@@ -27,7 +27,10 @@ def inicio(request):
 
 def result(request):
     if request.user.is_authenticated:
-        return render(request, "eeg/result.html")
+        username = request.user.username
+        information = {"username": username}
+        # login(request, user)
+        return render(request, "eeg/result.html", information)
     else:
         return redirect(reverse("welcome"))
 
