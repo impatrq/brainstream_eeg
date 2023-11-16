@@ -1,5 +1,6 @@
 // var imagen = document.getElementById('logochange');
 // logochange.src =  "/static/img/logo-negro.png";
+longitud = 300
 function cambiarIcono() {
     // iconoElemento = document.getElementById("icono1");
 
@@ -24,17 +25,24 @@ function cambiarIcono1() {
 }
 
 
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", function () {
     var lb = document.querySelector("lat_butons");
-    lb.classList.toggle("sticky",window.scrollY > 0);
+    lb.classList.toggle("sticky", window.scrollY > 0);
 })
 
+var username = document.getElementById('my-element').getAttribute('data-my-variable');
+var presion = 0
 var range = "";
 var cadena = "";
+var enviado = 0;
+var data_send = {
+    "presion": presion,
+    "username": username
+}
 for (var i = 0; i < 400; i++) {
     range += i.toString() + ", ";
     cadena += i.toString() + ", ";
-}{}
+} { }
 var arrayEnteros = cadena.split(",").map(function (num) {
     return parseInt(num.trim(), 10);
 });
