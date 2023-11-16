@@ -6,6 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 import sys
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
+from django.contrib.auth import login
+import os
+import numpy as np
 encoding = sys.getdefaultencoding()
 
 def inicio(request):
