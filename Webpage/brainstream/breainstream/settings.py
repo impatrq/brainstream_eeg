@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'breainstream.wsgi.application'
-ASGI_APPLICATION = 'breainstream.asgi.application'
+ASGI_APPLICATION = 'app1.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
