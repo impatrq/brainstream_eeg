@@ -1,0 +1,3 @@
+C:/Users/estudiante/Documents/proyect/pi_pico/build/pioasm/CMakeFiles/pioasm.dir
+C:/Users/estudiante/Documents/proyect/pi_pico/build/pioasm/CMakeFiles/edit_cache.dir
+C:/Users/estudiante/Documents/proyect/pi_pico/build/pioasm/CMakeFiles/rebuild_cache.dir
