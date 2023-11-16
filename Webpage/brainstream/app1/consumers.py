@@ -229,3 +229,76 @@ class GraphConsumer(WebsocketConsumer):
               "value9": v9send, "value10": v10send,"value11": v11send, "value12": v12send,
                "value13": v13send, "value14": v14send,"value15": v15send, "value16": v16send,
                  "sfreq": sfreq, "counter": counter}))
+    def GenerarImagen(self, array, save_dir, now, sfreq):
+        num_channels = 16
+        sampling_frequency = int(sfreq)
+        short_time = 1
+        try: 
+            total_time = array.shape[1]//sampling_frequency  # segundos
+        except Exception:
+            total_time = 1
+        short_data_lenght = (short_time * array.shape[1])//total_time
+        print(array.shape)
+        print(total_time, short_data_lenght)
+        array = array[:short_data_lenght]
+        print(array.shape)
+        # Crear un arreglo de tiempo
+        time = np.linspace(0, short_time, array.shape[1])
+        print(array.shape)
+        print(time.shape)
+        # Crear la figura y el eje
+        plt.figure(figsize=(10, 6))
+
+        # Ciclo para graficar cada canal separadamente
+        for i,channel in enumerate(range(num_channels)):
+            offset = channel * 1.5  # Ajusta el espacio vertical entre canales
+            plt.plot(time, array[i] + offset, label=f'Canal {channel+1}')
+
+        plt.xlabel('Tiempo (segundos)')
+        plt.ylabel('Valor')
+        plt.title('Datos de todos los canales')
+        plt.legend()
+        plt.grid()
+        img_dir = save_dir + "preview\\"
+        if not os.path.exists(img_dir):
+            os.mkdir(img_dir)
+        plt.savefig(f"{img_dir}{now}")
+
+    def GenerarInforme(self, array, save_dir, sfreq, now):
+        ch_names = [str(a) for a in range(16)]
+        ch_types = ["eeg"] * len(ch_names)
+        info = mne.create_info(ch_names=ch_names, sfreq=sfreq, ch_types=ch_types)
+        raw = mne.io.RawArray(array, info, verbose=False)
+
+        # raw.pick_types(eeg=True).load_data()
+        report = mne.Report()
+        report.add_raw(raw, title="Raw", scalings="auto", psd=True,)
+        report_dir = save_dir + "informes\\"
+        if not os.path.exists(report_dir):
+            os.mkdir(report_dir)
+        report.save(f"{report_dir}{now}.html", overwrite=True, open_browser=False,)
+
+    def GenerarEdf(self, array, save_dir, sqfreq, now):
+        n_channels = 16
+        edf_dir = save_dir + "download\\"
+        if not os.path.exists(edf_dir):
+            os.mkdir(edf_dir)
+        edf_writer = pyedflib.EdfWriter(f"{edf_dir}{now}.edf", n_channels=n_channels, file_type=pyedflib.FILETYPE_EDFPLUS)
+        for i in range(n_channels):
+            channel_info = {
+                'label': f"Channel {i+1}",
+                'dimension': 'mV',
+                'sample_rate': sqfreq,
+                'physical_max': 100.0,     # Rango máximo en el archivo EDF
+                'physical_min': 0.0,       # Rango mínimo en el archivo EDF
+                'digital_max': 32767,      # Máximo valor digital para int16
+                'digital_min': -32768      # Mínimo valor digital para int16
+            }
+            edf_writer.setSignalHeader(i, channel_info)
+
+        data_mapped = (array * (100 / 1.15)).astype(np.int16)  # Realizar la transformación y convertir a int16
+        edf_writer.writeSamples(data_mapped)
+        # Escribir los datos en el archivo
+        edf_writer.writeSamples(array.astype(np.int16))  # Convertir datos a int16 antes de escribi
+        # Cerrar el archivo
+        edf_writer.close()
