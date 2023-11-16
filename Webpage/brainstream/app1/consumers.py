@@ -1,14 +1,23 @@
 import json
 from random import randint
+import os
 from time import sleep
 from time import time
+import datetime
+import array
 from channels.generic.websocket import WebsocketConsumer
 from django.core.cache import cache  # This is the memcache cache.
 import serial
 from django.shortcuts import render, redirect
 from django.urls import reverse
 import asyncio
+import matplotlib.pyplot as plt
 from app1.models import Datos  # Ajusta la ruta a tu modelo
+import numpy as np
+import mne
+from django.contrib.auth.decorators import login_required
+from channels.auth import login
+import pyedflib
 serial_port = serial.Serial('COM3', baudrate=115200)
 serial_port.timeout = None
 
