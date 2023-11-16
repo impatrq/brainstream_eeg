@@ -1,0 +1,69 @@
+{% extends 'web_base.html' %}
+{% load static %}
+{% block adicional %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- Contenedor para el gráfico -->
+    <div id="graph"></div>
+    <script type="text/javascript">
+        var graph = document.getElementById('graph');
+        // Genera datos de ejemplo para 16 canales con offset
+        var numChannels = 8;
+        var x = []
+        const channelData = {{ arr }};
+        for (var i = 0; i < numChannels; i++) {
+            for (var j = 0; j < channelData[0].length; j++) {
+                x.push(j);
+            }
+        }
+
+        // Crea trazas para cada canal
+        var traces = [];
+        for (var i = 0; i < numChannels; i++) {
+            traces.push({
+                x: x,
+                y: channelData[i],
+                mode: 'lines',
+                name: 'Canal ' + (i + 1)
+            });
+        }
+
+        // Define el diseño de la gráfica
+        var layout = {
+            xaxis: {
+                type: 'linear',
+                rangemode: 'normal',
+                rangeslider: {
+                    visible: true
+                },
+            },
+            yaxis: {
+                title: 'Valor de Y'
+            },
+            title: 'Gráfico Scrollable en el Eje X con Plotly',
+            width: 1920, // Ancho en píxeles
+            height: 1080, // Altura en píxeles
+            showlegend: false, // Oculta la leyenda (botones de arriba a la derecha)
+            updatemenu: null, // Desactiva los botones de exportación
+            modebar: {
+                displayModeBar: false // Oculta la barra de herramientas (botones de abajo)
+            }
+        };
+        // Cleanup only if not first start (else it is already clean, and this would raise an error):
+        // Plotly.deleteTraces('gra>ph');
+        // Crea la figura
+        Plotly.purge(graph); // Reemplaza 'id_del_contenedor' con el ID real de tu contenedor
+
+        Plotly.newPlot(graph, traces, layout, { displayModeBar: false });
+    </script>
+
+</body>
+
+</html>
+{% endblock %}
