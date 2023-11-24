@@ -8,6 +8,9 @@
 ## ¿Que es?
 Brainstream es un proyecto en el que registramos y controlamos las respeustas del cerebro ante diferentes estimulos
 
+## Video presentacion
+https://youtu.be/_Q9uvNX2eOU
+
 ## ¿Como funciona?
 El usuario que disponga de este instrumento colocara electrodos en su cabeza para poder llevar a cabo un electroencefalograma, que se muestra en tiempo real en una pagina web, y posteriormente poder acceder a un historial desde cualquier computadora
 
